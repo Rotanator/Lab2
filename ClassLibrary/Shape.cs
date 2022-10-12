@@ -11,27 +11,16 @@ namespace ClassLibrary
             Random rand = new Random();
             Vector3 position = new Vector3(rand.Next(-20, 20), rand.Next(-20, 20), rand.Next(-20, 20));
 
-            return InstantiateShape(position);
+            return GenerateShape(position);
         }
 
-        public static Shape GenerateShape(Vector3 position)
+        public static Shape GenerateShape(Vector3 centerV3)
         {
-            //overload provides a center pos. as an argument
-            //returns a randomly generated shape with provided center pos.
-
-            return InstantiateShape(position);   
-        }
-
-        //InstantiateShape(Vector3 centerV3) can only be accessed from this abstraction.
-        private static Shape InstantiateShape(Vector3 centerV3)
-        {
-            //Handles the logic for actually generating the shape to prevent code reuse.
 
             Random rand = new Random();
-
             Vector2 centerV2 = new Vector2(centerV3.X, centerV3.Y);
 
-            
+
             //randomise switch case expression to return a randomly generated shape 
             int randomiseShape = rand.Next(0, 7);
             switch (randomiseShape)
@@ -70,6 +59,7 @@ namespace ClassLibrary
                 default:
                     return new Circle(Vector2.Zero, 0.0f);
             }
+
         }
 
     }

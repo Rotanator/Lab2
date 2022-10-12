@@ -44,13 +44,7 @@ namespace ClassLibrary
             this.circumference = (float)width*4;
         }
 
-        public bool IsSquare
-        {
-            get 
-            {
-                if (Width == Height) { return true; } else { return false; }
-            }
-        }
+        public bool IsSquare => Width == Height;
 
         public override string ToString()
         {

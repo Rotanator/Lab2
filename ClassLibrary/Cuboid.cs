@@ -50,17 +50,7 @@ namespace ClassLibrary
             this.area = 6 * (float)Math.Pow(width, 2);
         }
 
-        public bool IsCube
-        {
-            get
-            {
-                //Length == Width == Height
-                if (Length == Width && Width == Height)
-                {
-                    return true;
-                } else { return false; }
-            }
-        }
+        public bool IsCube => Width == Height && Height == Length;
 
         public override string ToString()
         {

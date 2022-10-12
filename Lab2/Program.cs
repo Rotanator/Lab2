@@ -5,7 +5,7 @@
 
 Shape[] shapesArray = new Shape[20];
 
-for (int i = 0; i < 20; i++)
+for (int i = 0; i < shapesArray.Length; i++)
 {
     shapesArray[i] = Shape.GenerateShape();
 }
@@ -49,12 +49,12 @@ for (int i = 0; i < shapesArray.Length; i++)
     Console.WriteLine(shapesArray[i]);
 
     //If statement for finding the shape with the highest volume
-    if (currentShape is Shape3D)
+    if (currentShape is Shape3D Shape3D)
     {
-        Console.WriteLine($"Shape Volume: {(currentShape as Shape3D).Volume}");
-        if ((currentShape as Shape3D).Volume > highestVolume)
+        Console.WriteLine($"Shape Volume: {Shape3D.Volume}");
+        if (Shape3D.Volume > highestVolume)
         {
-            highestVolume = (currentShape as Shape3D).Volume;
+            highestVolume = Shape3D.Volume;
             highestVolumeIndex = i+1;
             highestVolumeShapeType = currentShapeType;
         }
@@ -66,7 +66,7 @@ for (int i = 0; i < shapesArray.Length; i++)
 
 Console.WriteLine("\n-----");
 Console.WriteLine($"Total circumference of all triangles: {circumferenceTotal} units");
-Console.WriteLine($"Average area of any given shape: {areaTotal/20} units");
+Console.WriteLine($"Average area of any given shape: {areaTotal/shapesArray.Length} units");
 Console.WriteLine($"{highestVolumeShapeType} (shape #{highestVolumeIndex}) has the highest volume of: {highestVolume} units");
 Console.WriteLine("-----\n");
 
@@ -126,11 +126,6 @@ void PrintMostOccuringShapes()
         Console.WriteLine($"{kvp.Key} - {kvp.Value}");
     }
 }
-
-
-
-
-
 
 
 
