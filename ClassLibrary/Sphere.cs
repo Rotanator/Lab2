@@ -24,7 +24,7 @@ namespace ClassLibrary
         {
             this.center = center;
             this.radius = radius;
-            this.volume = (float)(4.18879 * radius * radius * radius);
+            this.volume = (float)(4.0 / 3.0 * Math.PI * radius * radius * radius);
             this.area = (float)(4*Math.PI* Math.Pow(radius, 2));
         }
 
